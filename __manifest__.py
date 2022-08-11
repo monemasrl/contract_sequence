@@ -41,7 +41,7 @@ Contract Sequence Module Project.
         "Andrea Bettarini <bettarini@monema.it>"
     ],
     "website": "https://monema.it",
-    "license": "MIT",
+    "license": "Other OSI approved licence",
     "category": "Sales",
 
     "depends": [
