@@ -2,16 +2,16 @@
 Contract Sequence
 =================
 
-This module adds a sequential code for contracts.
+This module adds a sequential number for contracts.
 
 Configuration
 =============
 
-To change the contract code sequence, you must:
+To change the contract number sequence, you must:
 
 #. Activate the developer mode.
 #. Go to Settings > Technical > Sequences & Identifiers > Sequences.
-#. Click on "Contract code" sequence to edit.
+#. Click on "Contract number" sequence to edit.
 
 Usage
 =====
@@ -19,8 +19,8 @@ Usage
 To use this module, you need to:
 
 #. Go to menu Project > Search > Contracts and create a new contract, and you get a
-new code saving it.
-#. If you duplicate a contract, you will get a new code for the new contract.
+new number saving it.
+#. If you duplicate a contract, you will get a new number for the new contract.
 
 Bug Tracker
 ===========

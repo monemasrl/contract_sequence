@@ -1,34 +1,34 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <odoo>
-    <record id="contract_contract_code_form_view" model="ir.ui.view">
-        <field name="name">contract.contract.code.form</field>
+    <record id="contract_contract_number_form_view" model="ir.ui.view">
+        <field name="name">contract.contract.number.form</field>
         <field name="model">contract.contract</field>
         <field name="inherit_id" ref="contract.contract_contract_form_view" />
         <field name="arch" type="xml">
             <field name="name" position="before">
-                <field name="code" class="oe_inline" />
+                <field name="number" class="oe_inline" />
                 <span class="oe_inline"> - </span>
             </field>
         </field>
     </record>
-    <record id="contract_contract_code_tree_view" model="ir.ui.view">
-        <field name="name">contract.contract.code.tree</field>
+    <record id="contract_contract_number_tree_view" model="ir.ui.view">
+        <field name="name">contract.contract.number.tree</field>
         <field name="model">contract.contract</field>
         <field name="inherit_id" ref="contract.contract_contract_tree_view" />
         <field name="arch" type="xml">
             <field name="name" position="before">
-                <field name="code" />
+                <field name="number" />
             </field>
         </field>
     </record>
-    <record id="contract_contract_code_search_view" model="ir.ui.view">
-        <field name="name">contract.contract.code.search</field>
+    <record id="contract_contract_number_search_view" model="ir.ui.view">
+        <field name="name">contract.contract.number.search</field>
         <field name="model">contract.contract</field>
         <field name="inherit_id" ref="contract.contract_contract_search_view" />
         <field name="arch" type="xml">
             <field name="name" position="attributes">
                 <attribute name="filter_domain">['|', ('name', 'ilike', self),
-                    ('code', 'ilike', self)]
+                    ('number', 'ilike', self)]
                 </attribute>
             </field>
         </field>
