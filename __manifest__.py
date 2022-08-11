@@ -24,31 +24,35 @@
 #
 ###############################################################################
 {
-    'name': 'Contract Sequence',
-    'summary': 'Contract Sequence Module Project',
-    'version': '14.0.1.0.1',
+    "name": "Contract Sequence",
+    "summary": "Contract Sequence Module Project",
+    "version": "14.0.1.0.1",
 
-    'description': """
+    "description": """
 Contract Sequence Module Project.
 ==============================================
 
 
     """,
 
-    'author': 'Monema S.r.l.',
-    'maintainer': 'Andrea Bettarini',
-    'contributors': [
-        'Andrea Bettarini <bettarini@monema.it>'
+    "author": "Monema S.r.l.",
+    "maintainer": "Andrea Bettarini",
+    "contributors": [
+        "Andrea Bettarini <bettarini@monema.it>"
     ],
-    'website': 'https://monema.it',
-    'license': 'MIT',
-    'category': 'Sales',
+    "website": "https://monema.it",
+    "license": "MIT",
+    "category": "Sales",
 
-    'depends': [
-        'sale',
-        'contract'
+    "depends": [
+        "sale",
+        "contract"
     ],
-    'data': [
+    "data": [
+        "data/contract_sequence.xml",
+        "views/contract.xml",
     ],
-    'installable': True
+    "installable": True,
+    "pre_init_hook": "pre_init_hook",
+    "post_init_hook": "post_init_hook",
 }
