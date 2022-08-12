@@ -20,7 +20,7 @@ To change the contract number sequence, you must:
 Usage
 =====
 
-To use this module, you need to aaa:
+To use this module, you need to:
 
 #. Go to menu Project > Search > Contracts and create a new contract, and you get a new number saving it.
 #. If you duplicate a contract, you will get a new number for the new contract.
