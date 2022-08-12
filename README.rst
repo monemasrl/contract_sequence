@@ -1,3 +1,7 @@
+.. image:: https://img.shields.io/github/license/monemasrl/contract_sequence
+   :target: https://github.com/monemasrl/contract_sequence/blob/14.0/LICENSE
+   :alt: License: MIT
+
 =============================
 [14.0] Odoo Contract Sequence
 =============================
