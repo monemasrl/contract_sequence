@@ -22,12 +22,12 @@ class TestContractSequenceBase(common.SingleTransactionCase):
 
 
 class TestContractSequence(TestContractSequenceBase):
-    @tagged('contract_sequence')
+    @tagged("contract_sequence")
     def test_contract(self):
         self.contract.partner_id = self.partner.id
         self.assertIsNotNone(self.contract.number)
 
-    @tagged('contract_sequence')
+    @tagged("contract_sequence")
     def test_contract_copy(self):
         contract1 = self.contract.copy()
 
