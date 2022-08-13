@@ -1,5 +1,5 @@
 from odoo import exceptions
-from odoo.tests import common
+from odoo.tests import common,tagged
 
 class TestContractSequenceBase(common.SingleTransactionCase):
     @classmethod
@@ -22,6 +22,7 @@ class TestContractSequenceBase(common.SingleTransactionCase):
         )
 
 class TestContractSequence(TestContractSequenceBase):
+    @tagged('contract_sequence')
     def test_contract(self):
         partner = self.partner.copy()
         self.contract.partner_id = self.partner.id
