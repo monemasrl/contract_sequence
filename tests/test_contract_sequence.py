@@ -1,6 +1,7 @@
 from odoo import exceptions
 from odoo.tests import common,tagged
 
+
 class TestContractSequenceBase(common.SingleTransactionCase):
     @classmethod
     def setUpClass(cls):
@@ -21,6 +22,7 @@ class TestContractSequenceBase(common.SingleTransactionCase):
             }
         )
 
+
 class TestContractSequence(TestContractSequenceBase):
     @tagged('contract_sequence')
     def test_contract(self):
@@ -28,3 +30,10 @@ class TestContractSequence(TestContractSequenceBase):
         self.contract.partner_id = self.partner.id
 
         self.assertEqual(self.contract.partner_id, self.partner)
+
+    @tagged('contract_sequence')
+    def test_contract_copy(self):
+        contract1 = self.contract.copy()
+
+        self.assertIsNotNone(contract1.number)
+        self.assertNotEqual(self.contract.number, contract1.number)
