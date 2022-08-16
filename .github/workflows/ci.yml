@@ -45,6 +45,6 @@ jobs:
           
       - name: Run unit tests
         run: |
-          pytest -p no:warnings -rA -s --odoo-database=db_test --junitxml=coverage/local/junit.xml --cov-report html:coverage/local/cov.html --cov-report xml:coverage/local/coverage.xml --cov-report annotate:coverage/local/cov_annotate --cov=/mnt/addons/contract_sequence /mnt/addons/contract_sequence/
+          pytest -p no:warnings -rA -s --odoo-database=db_test --junitxml=coverage/local/junit.xml --cov-report html:coverage/local/cov.html --cov-report xml:coverage/local/coverage.xml --cov-report annotate:coverage/local/cov_annotate --cov=/__w/contract_sequence/contract_sequence /__w/contract_sequence/contract_sequence
 
   
