@@ -33,3 +33,8 @@ class TestContractSequence(TestContractSequenceBase):
 
         self.assertIsNotNone(contract1.number)
         self.assertNotEqual(self.contract.number, contract1.number)
+
+    @tagged("contract_sequence")
+    def test_name_get(self):
+        contract_name = self.contract.name_get()
+        self.assertEquals(contract_name[0][1], "[{}] {}".format(self.contract.number, self.contract.name))
