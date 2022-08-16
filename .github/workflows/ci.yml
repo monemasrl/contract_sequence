@@ -41,7 +41,7 @@ jobs:
         uses: actions/checkout@v2
         with:
           repository: OCA/contract
-          branch: 14.0
+          ref: 14.0
           fetch-depth: 0
       - name: Checkout
         uses: actions/checkout@v2
