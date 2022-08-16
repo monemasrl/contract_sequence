@@ -42,11 +42,12 @@ jobs:
         with:
           repository: OCA/contract
           ref: "14.0"
-          path: ../contract
+          path: contract
           fetch-depth: 0
       - name: Checkout
         uses: actions/checkout@v2
         with:
+          path: contract_sequence
           fetch-depth: 0
           
       - name: Switch to Current Branch
