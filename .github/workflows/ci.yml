@@ -17,7 +17,7 @@ jobs:
       image: monemaweb/odoo-test:14.0
       options: --user root
       env:
-        HOST: db
+        HOST: postgres
         USER: odoo
         PASSWORD: odoo
 
