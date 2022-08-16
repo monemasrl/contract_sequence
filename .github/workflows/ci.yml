@@ -17,6 +17,10 @@ jobs:
     container: 
       image: monemaweb/odoo-test:14.0
       options: --user root
+      env:
+        HOST: db
+        USER: odoo
+        PASSWORD: odoo
 
     services:
       postgres:
