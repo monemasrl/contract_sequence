@@ -10,7 +10,7 @@ from odoo import SUPERUSER_ID, api
 def pre_init_hook(cr):
     """
     With this pre-init-hook we want to avoid error when creating the UNIQUE
-    number constraint when the module is installed and before the aaaaaaaaaaaaaaaaaaaaaaaaa asdadds asdadasad asdaasdaddds
+    number constraint when the module is installed and before the
     post-init-hook is launched.
     """
     cr.execute(
