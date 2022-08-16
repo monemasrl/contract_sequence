@@ -47,7 +47,7 @@ jobs:
         run: git checkout ${{ env.BRANCH }}
       - name: Run initdb
         run: |
-          set && odoo -i contract_sequence -d db_test --stop-after-init --no-http --db_host $HOST  --db_user $USER --db_password $PASSWORD
+          odoo -i contract_sequence -d db_test --stop-after-init --no-http --db_host $HOST  --db_user $USER --db_password $PASSWORD
       - name: Run unit tests
         run: |
           pytest -p no:warnings -rA -s --odoo-database=db_test --junitxml=coverage/local/junit.xml --cov-report html:coverage/local/cov.html --cov-report xml:coverage/local/coverage.xml --cov-report annotate:coverage/local/cov_annotate --cov=/__w/contract_sequence/contract_sequence /__w/contract_sequence/contract_sequence
