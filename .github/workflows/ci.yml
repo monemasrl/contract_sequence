@@ -3,13 +3,14 @@
 
 name: CI
 
-# Controls when the action will run. Triggers the workflow on push or pull request
-# events but only for the master branch
+# Controls when the action will run. Triggers the workflow on push or pull 
+# request events but only for the master branch
 on:
   push:
     branches: ["14.0"]
 
-# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+# A workflow run is made up of one or more jobs that can run sequentially or
+# in parallel
 jobs:
   container-jobs:
     runs-on: self-hosted
@@ -35,8 +36,11 @@ jobs:
           --health-timeout 5s
           --health-retries 5
 
-    # Steps represent a sequence of tasks that will be executed as part of the job
+    # Steps represent a sequence of tasks that will be executed as part
+    # of the job
     steps:
+      - name: Environment variables
+        run: set
       - name: Checkout OCA/contract
         uses: actions/checkout@v2
         with:
@@ -55,9 +59,16 @@ jobs:
           /update_conf2.sh
       - name: Run initdb
         run: |
-          odoo -i contract_sequence -d db_test --stop-after-init --no-http --db_host $HOST  --db_user $USER --db_password $PASSWORD
+          odoo -i contract_sequence -d db_test --stop-after-init --no-http \
+            --db_host $HOST  --db_user $USER --db_password $PASSWORD
       - name: Run unit tests
         run: |
-          pytest -p no:warnings -rA -s --odoo-database=db_test --junitxml=/__w/contract_sequence/contract_sequence/junit.xml --cov-report html:/__w/contract_sequence/contract_sequence/cov.html --cov-report xml:/__w/contract_sequence/contract_sequence/coverage.xml --cov-report annotate:/__w/contract_sequence/contract_sequence/cov_annotate --cov=/__w/contract_sequence/contract_sequence/monema/contract_sequence/ /__w/contract_sequence/contract_sequence/monema/contract_sequence/
+          pytest -p no:warnings -rA -s --odoo-database=db_test \
+            --junitxml=/__w/contract_sequence/contract_sequence/junit.xml \
+            --cov-report html:/__w/contract_sequence/contract_sequence/cov.html \
+            --cov-report xml:/__w/contract_sequence/contract_sequence/coverage.xml \
+            --cov-report annotate:/__w/contract_sequence/contract_sequence/cov_annotate \
+            --cov=/__w/contract_sequence/contract_sequence/monema/contract_sequence/ \
+            /__w/contract_sequence/contract_sequence/monema/contract_sequence/ \
 
   
