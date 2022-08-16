@@ -13,7 +13,6 @@ on:
 jobs:
   container-jobs:
     runs-on: self-hosted
-    environment: Test
     container: 
       image: monemaweb/odoo-test:14.0
       options: --user root
