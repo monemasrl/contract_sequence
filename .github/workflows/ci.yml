@@ -1,6 +1,4 @@
-
 # This is a basic workflow to help you get started with Actions
-
 name: CI
 
 # Controls when the action will run. Triggers the workflow on push or pull 
@@ -18,7 +16,7 @@ jobs:
       image: monemaweb/odoo-test:14.0
       options: --user root
       env:
-        ADDONS_PATH: /mnt/extra-addons, /__w/contract_sequence/contract_sequence/monema, /__w/contract_sequence/contract_sequence/contract
+        ADDONS_PATH: /mnt/extra-addons,/__w/contract_sequence/contract_sequence/monema,/__w/contract_sequence/contract_sequence/contract
         HOST: postgres
         USER: odoo
         PASSWORD: odoo
@@ -64,11 +62,11 @@ jobs:
       - name: Run unit tests
         run: |
           pytest -p no:warnings -rA -s --odoo-database=db_test \
-            --junitxml=/__w/contract_sequence/contract_sequence/junit.xml \
-            --cov-report html:/__w/contract_sequence/contract_sequence/cov.html \
-            --cov-report xml:/__w/contract_sequence/contract_sequence/coverage.xml \
-            --cov-report annotate:/__w/contract_sequence/contract_sequence/cov_annotate \
-            --cov=/__w/contract_sequence/contract_sequence/monema/contract_sequence/ \
-            /__w/contract_sequence/contract_sequence/monema/contract_sequence/ \
+            --junitxml=${GITHUB_WORKSPACE}/coverage/junit.xml \
+            --cov-report html:${GITHUB_WORKSPACE}/coverage/cov.html \
+            --cov-report xml:${GITHUB_WORKSPACE}/coverage/coverage.xml \
+            --cov-report annotate:${GITHUB_WORKSPACE}/coverage/cov_annotate \
+            --cov=${GITHUB_WORKSPACE}/monema/contract_sequence/ \
+            ${GITHUB_WORKSPACE}/monema/contract_sequence/
 
   
