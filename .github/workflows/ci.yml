@@ -55,6 +55,6 @@ jobs:
           odoo -i contract_sequence -d db_test --stop-after-init --no-http --db_host $HOST  --db_user $USER --db_password $PASSWORD
       - name: Run unit tests
         run: |
-          pytest -p no:warnings -rA -s --odoo-database=db_test --junitxml=/__work/contract_sequence/contract_sequence/junit.xml --cov-report html:/__work/contract_sequence/contract_sequence/cov.html --cov-report xml:/__work/contract_sequence/contract_sequence/coverage.xml --cov-report annotate:/__work/contract_sequence/contract_sequence/cov_annotate --cov=/__w/contract_sequence/contract_sequence/monema/contract_sequence/ /__work/contract_sequence/contract_sequence/monema/contract_sequence/
+          pytest -p no:warnings -rA -s --odoo-database=db_test --junitxml=/__w/contract_sequence/contract_sequence/junit.xml --cov-report html:/__w/contract_sequence/contract_sequence/cov.html --cov-report xml:/__w/contract_sequence/contract_sequence/coverage.xml --cov-report annotate:/__w/contract_sequence/contract_sequence/cov_annotate --cov=/__w/contract_sequence/contract_sequence/monema/contract_sequence/ /__w/contract_sequence/contract_sequence/monema/contract_sequence/
 
   
