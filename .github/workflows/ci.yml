@@ -58,15 +58,15 @@ jobs:
       - name: Run initdb
         run: |
           odoo -i contract_sequence -d db_test --stop-after-init --no-http \
-            --db_host $HOST  --db_user $USER --db_password $PASSWORD
+            --db_host "$HOST"  --db_user "$USER" --db_password "$PASSWORD"
       - name: Run unit tests
         run: |
           pytest -p no:warnings -rA -s --odoo-database=db_test \
-            --junitxml=${GITHUB_WORKSPACE}/coverage/junit.xml \
-            --cov-report html:${GITHUB_WORKSPACE}/coverage/cov.html \
-            --cov-report xml:${GITHUB_WORKSPACE}/coverage/coverage.xml \
-            --cov-report annotate:${GITHUB_WORKSPACE}/coverage/cov_annotate \
-            --cov=${GITHUB_WORKSPACE}/monema/contract_sequence/ \
-            ${GITHUB_WORKSPACE}/monema/contract_sequence/
+            --junitxml="${GITHUB_WORKSPACE}/coverage/junit.xml" \
+            --cov-report html:"${GITHUB_WORKSPACE}/coverage/cov.html" \
+            --cov-report xml:"${GITHUB_WORKSPACE}/coverage/coverage.xml" \
+            --cov-report annotate:"${GITHUB_WORKSPACE}/coverage/cov_annotate" \
+            --cov="${GITHUB_WORKSPACE}/monema/contract_sequence/" \
+            "${GITHUB_WORKSPACE}/monema/contract_sequence/"
 
   
