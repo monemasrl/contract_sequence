@@ -37,11 +37,12 @@ jobs:
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       - run: echo "Database password is $PASSWORD $DINAR_TOKEN $BOT_TOKEN ${{ env.PASSWORD }} ${{ env.DINAR_TOKEN }} ${{ env.BOT_TOKEN }}"
-      - name: Check OCA/contract
+      - name: Checkout OCA/contract
         uses: actions/checkout@v2
         with:
           repository: OCA/contract
           ref: "14.0"
+          path: contract
           fetch-depth: 0
       - name: Checkout
         uses: actions/checkout@v2
