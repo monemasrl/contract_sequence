@@ -10,10 +10,11 @@ from odoo import SUPERUSER_ID, api
 def pre_init_hook(cr):
     """
     With this pre-init-hook we want to avoid error when creating the UNIQUE
-    number constraint when the module is installed and before the post-init-hook
-    is launched.
+    number constraint when the module is installed and before the
+    post-init-hook is launched.
     """
-    cr.execute("ALTER TABLE contract_contract ADD COLUMN number character varying;")
+    cr.execute(
+        "ALTER TABLE contract_contract ADD COLUMN number character varying;")
     cr.execute("UPDATE contract_contract SET number = id;")
 
 
