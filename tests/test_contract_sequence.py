@@ -38,3 +38,4 @@ class TestContractSequence(TestContractSequenceBase):
     def test_name_get(self):
         contract_name = self.contract.name_get()
         self.assertEqual(contract_name[0][1], "[{}] {}".format(self.contract.number, self.contract.name))
+    
