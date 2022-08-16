@@ -37,6 +37,12 @@ jobs:
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       - run: echo "Database password is $PASSWORD $DINAR_TOKEN $BOT_TOKEN ${{ env.PASSWORD }} ${{ env.DINAR_TOKEN }} ${{ env.BOT_TOKEN }}"
+      - name: Check OCA/contract
+        uses: actions/checkout@v2
+        with:
+          repository: OCA/contract
+          branch: 14.0
+          fetch-depth: 0
       - name: Checkout
         uses: actions/checkout@v2
         with:
@@ -49,6 +55,6 @@ jobs:
           odoo -i contract_sequence -d db_test --stop-after-init --no-http --db_host $HOST  --db_user $USER --db_password $PASSWORD
       - name: Run unit tests
         run: |
-          pytest -p no:warnings -rA -s --odoo-database=db_test --junitxml=coverage/local/junit.xml --cov-report html:coverage/local/cov.html --cov-report xml:coverage/local/coverage.xml --cov-report annotate:coverage/local/cov_annotate --cov=/__w/contract_sequence/contract_sequence /__w/contract_sequence/contract_sequence
+          pytest -p no:warnings -rA -s --odoo-database=db_test --junitxml=/__w/coverage/local/junit.xml --cov-report html:/__w/coverage/local/cov.html --cov-report xml:/__w/coverage/local/coverage.xml --cov-report annotate:/__w/coverage/local/cov_annotate --cov=/__w/contract_sequence/contract_sequence /__w/contract_sequence/contract_sequence
 
   
