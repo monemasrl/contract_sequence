@@ -27,27 +27,19 @@
     "name": "Contract Sequence",
     "summary": "Contract Sequence Module",
     "version": "14.0.1.0.1",
-
     "description": """
 Contract Sequence Module.
 ==============================================
 This module adds a sequential number for contracts.
 
     """,
-
     "author": "Monema S.r.l.",
     "maintainer": "Andrea Bettarini",
-    "contributors": [
-        "Andrea Bettarini <bettarini@monema.it>"
-    ],
+    "contributors": ["Andrea Bettarini <bettarini@monema.it>"],
     "website": "https://monema.it",
     "license": "Other OSI approved licence",
     "category": "Sales",
-
-    "depends": [
-        "sale",
-        "contract"
-    ],
+    "depends": ["sale", "contract"],
     "data": [
         "data/contract_sequence.xml",
         "views/contract.xml",
