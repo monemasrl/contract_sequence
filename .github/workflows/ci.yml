@@ -36,7 +36,6 @@ jobs:
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-      - run: echo "Database password is $PASSWORD $DINAR_TOKEN $BOT_TOKEN ${{ env.PASSWORD }} ${{ env.DINAR_TOKEN }} ${{ env.BOT_TOKEN }}"
       - name: Checkout OCA/contract
         uses: actions/checkout@v2
         with:
@@ -44,11 +43,11 @@ jobs:
           ref: ${{ env.BRANCH }}
           path: contract
           fetch-depth: 0
-      - name: Checkout
+      - name: Checkout Contract Sequence
         uses: actions/checkout@v2
         with:
           ref: ${{ env.BRANCH }}
-          path: contract_sequence
+          path: monema/contract_sequence
           fetch-depth: 0
       - name: Run initdb
         run: |
