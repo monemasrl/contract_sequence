@@ -52,7 +52,7 @@ jobs:
           fetch-depth: 0
       - name: Run update configuration
         run: |
-          /update_conf.sh
+          /update_conf2.sh
       - name: Run initdb
         run: |
           odoo -i contract_sequence -d db_test --stop-after-init --no-http --db_host $HOST  --db_user $USER --db_password $PASSWORD
