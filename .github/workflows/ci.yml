@@ -47,11 +47,9 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
         with:
+          ref: "14.0"
           path: contract_sequence
           fetch-depth: 0
-          
-      - name: Switch to Current Branch
-        run: git checkout ${{ env.BRANCH }}
       - name: Run initdb
         run: |
           odoo -i contract_sequence -d db_test --stop-after-init --no-http --db_host $HOST  --db_user $USER --db_password $PASSWORD
