@@ -17,6 +17,7 @@ jobs:
       image: monemaweb/odoo-test:14.0
       options: --user root
       env:
+        ADDONS_PATH: /__w/contract,/__w/monema
         HOST: postgres
         USER: odoo
         PASSWORD: odoo
