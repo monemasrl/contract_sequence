@@ -1,7 +1,13 @@
 [flake8]
-ignore = E402, E127, W503, W504, N807, E501
+# E203: whitespace before ':' (black behaviour)
+# E501: flake8 line length (covered by bugbear B950)
+# W503: line break before binary operator (black behaviour)
+ignore = E203,E501,W503
 exclude = .git, __pycache__, __init__.py, chart/, config/
 max-complexity = 10
 count = true
 max-line-length = 88
 statistics = true
+select = C,E,F,W,B,B9
+per-file-ignores=
+    __init__.py:F401
